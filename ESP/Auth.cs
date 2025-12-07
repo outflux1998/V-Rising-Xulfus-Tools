@@ -205,9 +205,7 @@ namespace RetroCamera.ESP
                 string jsonPayload = System.Text.Json.JsonSerializer.Serialize(payload);
                 var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-                //var response = await httpClient.PostAsync("http://177.177.111.231:8080/auth", content);
-                //var response = await httpClient.PostAsync("http://localhost:8080/auth", content);
-                var response = await httpClient.PostAsync("http://159.89.49.145:8080/auth", content);
+                var response = await httpClient.PostAsync("http://localhost:8080/auth", content);
                 string responseText = await response.Content.ReadAsStringAsync();
 
                 IsAuthorized = responseText.Trim().ToLower() == "true";

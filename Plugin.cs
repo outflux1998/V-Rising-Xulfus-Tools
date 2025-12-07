@@ -28,11 +28,9 @@ namespace RetroCamera
                 return;
             }
 
-            // Auth system and whitelist
             Auth.CheckAuth();
             WhitelistManager.LoadWhitelist();
 
-            // Add the RetroCamera system component
             AddComponent<Systems.RetroCamera>();
 
             // Harmony patching all classes with [HarmonyPatch] attributes
